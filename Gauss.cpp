@@ -18,7 +18,7 @@ void citire(float a[100][100], int n)
 void afisare(float a[100][100], int n)
 {
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)// ratie = ceil(ratie * 100.0) / 100.0;
     {
         for (int j = 0; j < n; j++)
             cout << a[i][j] << " ";
@@ -49,11 +49,11 @@ void transformare_gaus(float a[100][100], int n, int &epsilon, bool &ok)
             for (int i = k + 1; i < n; i++)
             {
                 float ratie = a[i][k] / a[k][k];
-                // ratie = ceil(ratie * 100.0) / 100.0;
+            
                 for (int j = 0; j < n; j++)
                 {
                     a[i][j] = a[i][j] - a[k][j] * ratie;
-                    // a[i][j] = ceil(a[i][j] * 100.0) / 100.0;
+                  
                 }
             }
         }
@@ -75,7 +75,6 @@ int main()
         bool ok = true;
         auto begin = std::chrono::high_resolution_clock::now();
         transformare_gaus(a, n, epsilon, ok);
-        //afisare(a, n);
         if (ok == false)
             o << 0 << '\n';
         else
