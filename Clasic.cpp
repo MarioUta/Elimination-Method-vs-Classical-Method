@@ -63,7 +63,6 @@ int main()
     for (int n = 2; n <= nm; n++)
     {
         float detr;
-        // afisare(a, n);
         auto begin = std::chrono::high_resolution_clock::now();
         detr = det(n, a);
         o << n << " = " << detr;
