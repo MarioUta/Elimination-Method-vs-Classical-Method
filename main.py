@@ -17,8 +17,6 @@ with open("clasic_rez.txt",'r') as f:
 with open("gauss_rez.txt",'r') as f:
     date_gauss=[float(x) for x in f.readline().split()][4:]
 
-#print(date_clasic)
-#print(len(date_gauss))
 
 xlist=np.linspace(5,11,num=6)
 plt.figure(num=0,dpi=200)
